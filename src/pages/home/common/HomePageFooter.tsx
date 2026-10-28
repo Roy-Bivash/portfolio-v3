@@ -1,0 +1,11 @@
+export function HomePageFooter() {
+    const currentYear = new Date().getFullYear();
+
+    return (
+        <footer className="text-background-text text-sm mt-12 lg:mt-18">
+            <p>
+                &copy; {currentYear} <a href="https://rbivash.com/" target="_self" className="transition text-primary-text hover:underline hover:text-accent-text">ROY Bivash.</a> No rights reserved. Free to <a href="https://github.com/Roy-Bivash/portfolio" target="_blank" className="transition text-primary-text hover:underline hover:text-accent-text">use and modify.</a>
+            </p>
+        </footer>
+    )
+}
