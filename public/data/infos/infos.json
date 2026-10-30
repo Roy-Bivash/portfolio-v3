@@ -1,0 +1,16 @@
+{
+    "name": "ROY Bivash",
+    "avalable-language": ["fr", "en"],
+    "title": {
+        "fr": "Ingénieur en Systèmes d'Information - Spécialité management",
+        "en": "TODO"
+    },
+    "subhead": {
+        "fr": "Paris, Île-de-France, France",
+        "en": "TODO"
+    },
+    "description": {
+        "fr": "description-fr.md",
+        "en": "description-en.md"
+    }
+}

@@ -1,0 +1,17 @@
+[
+    {
+        "name": "GitHub",
+        "href": "",
+        "icon": "github.svg"
+    },
+    {
+        "name": "LinkedIn",
+        "href": "",
+        "icon": "linkedin.svg"
+    },
+    {
+        "name": "Email",
+        "href": "mailto:",
+        "icon": "email.svg"
+    }
+]
