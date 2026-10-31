@@ -1,3 +1,4 @@
+import { LanguageButton } from "@/components/languageButton/LanguageButton";
 import { LightEffect } from "../../components/lightEffect/LightEffect";
 import { HomePageFooter } from "./common/HomePageFooter";
 import { HomePageHeader } from "./common/HomePageHeader";
@@ -7,6 +8,7 @@ export function Home() {
     return (
         <div className="relative">
             <LightEffect />
+            <LanguageButton />
             <div className="mx-auto min-h-screen max-w-7xl px-6 py-10 md:px-12 md:py-20 lg:px-24 lg:py-24">
                 <HomePageHeader />
                 <HomePageMain />
