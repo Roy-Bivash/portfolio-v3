@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "thumbnail": "",
+        "title": {
+            "fr": "NASA Rover Images",
+            "en": "NASA Rover Images"
+        },
+        "subhead": {
+            "fr": "",
+            "en": ""
+        },
+        "description-file": {
+            "fr": "nasa-rover-images/description-fr.md",
+            "en": "nasa-rover-images/description-en.md"
+        },
+        "tags": [],
+        "link": {
+            "placeholder": "",
+            "link": "",
+            "target": "_blank"
+        }
+    },
+    {
+        "id": 2,
+        "thumbnail": "",
+        "title": {
+            "fr": "Pallery",
+            "en": "Pallery"
+        },
+        "subhead": {
+            "fr": "Pallery est une application web de type Pinterest destinée à héberger des images.",
+            "en": "Pallery is a Pinterest-style web application for hosting images"
+        },
+        "description-file": {
+            "fr": "pallery/description-fr.md",
+            "en": "pallery/description-en.md"
+        },
+        "tags": ["React", "TypeScript", "Express", "NodeJS", "Supabase", "TailwindCSS"],
+        "link": {
+            "placeholder": "GitHub",
+            "link": "https://github.com/Roy-Bivash/Pallery",
+            "target": "_blank"
+        }
+    }
+    
+]
