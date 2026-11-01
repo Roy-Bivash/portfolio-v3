@@ -5,18 +5,8 @@ import { MaskIcon } from "@/components/maskIcon/MaskIcon";
 import { useLanguage } from "@/providers/languageProvider";
 import type { Infos, LocalizedInfos } from "@/types/Infos";
 import type { SocialMedia } from "@/types/SocialMedia";
+import { fetchJson, fetchText } from "@/libs/Fetch";
 
-async function fetchJson<T>(url: string): Promise<T> {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error(`Failed to fetch ${url} (${res.status})`);
-    return res.json();
-}
-
-async function fetchText(url: string): Promise<string> {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error(`Failed to fetch ${url} (${res.status})`);
-    return res.text();
-}
 
 async function getSocialMedia(): Promise<SocialMedia[]> {
     const data = await fetchJson<SocialMedia[]>("/data/social/infos.json");
