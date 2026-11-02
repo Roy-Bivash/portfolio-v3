@@ -3,14 +3,16 @@ import placeholder from "@/assets/placeholder.svg";
 import { useEffect, useState } from "react";
 import type { ProjectType } from "@/types/ProjectType";
 import { getProjects } from "@/libs/Projets";
+import { useLanguage } from "@/providers/languageProvider";
 
 
 export function HomePageMain() {
     const INITIAL_VISIBLE = 6;
-
-
     const [showAll, setShowAll] = useState(false);
     const [projectList, setProjectList] = useState<ProjectType[]>([]);
+    const { tr } = useLanguage();
+
+
 
     useEffect(() => {
         let cancelled = false;
@@ -40,7 +42,7 @@ export function HomePageMain() {
 
     return (
         <main className="my-18">
-            <h2 className="text-secondary-text text-4xl mb-4">Projets</h2>
+            <h2 className="text-secondary-text text-4xl mb-4 capitalize">{ tr("projects") }</h2>
             <div className="group/list">
                 <ProjectList>
                     {firstProjects.map((el: ProjectType) => (
@@ -83,7 +85,7 @@ export function HomePageMain() {
                         aria-expanded={showAll}
                         className="px-6 py-2 font-semibold text-primary-text border-b-2 border-transparent hover:border-accent-text transition hover:bg-secondary-background hover:text-accent-text cursor-pointer"
                     >
-                        {showAll ? "Voir moins" : "Voir plus"}
+                        {showAll ? tr("see_less") : tr("see_more")}
                     </button>
                 </div>
             )}

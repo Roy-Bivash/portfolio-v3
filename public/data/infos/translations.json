@@ -1,0 +1,38 @@
+{
+    "project": {
+        "fr": "projet",
+        "en": "project"
+    },
+    "projects": {
+        "fr": "projets",
+        "en": "projects"
+    },
+    "close": {
+        "fr": "fermer",
+        "en": "close"
+    },
+    "see_less": {
+        "fr": "Voir moins",
+        "en": "See less"
+    },
+    "see_more": {
+        "fr": "Voir plus",
+        "en": "See more"
+    },
+    "loading": {
+        "fr": "Chargement",
+        "en": "Loading"
+    },
+    "project_not_found": {
+        "fr": "Projet introuvable",
+        "en": "Project not found"
+    },
+    "project_loading_error": {
+        "fr": "Une erreur est survenue lors du chargement du projet.",
+        "en": "An error occurred while loading the project."
+    },
+    "back_to_projects": {
+        "fr": "Retour aux projets",
+        "en": "Back to projects"
+    }
+}

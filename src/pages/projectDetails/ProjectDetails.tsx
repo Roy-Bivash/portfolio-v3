@@ -34,7 +34,7 @@ type Status = "loading" | "ready" | "not-found" | "error";
 
 export function ProjectDetails() {
     const { id } = useParams<{ id: string }>();
-    const { t, availableLanguages } = useLanguage();
+    const { t, tr, availableLanguages } = useLanguage();
 
     const [project, setProject] = useState<ProjectType | null>(null);
     const [description, setDescription] = useState<LocalizedInfos>();
@@ -93,20 +93,20 @@ export function ProjectDetails() {
                         className="inline-flex items-center gap-2 mb-8 text-secondary-text hover:text-accent-text transition"
                     >
                         <ArrowLeft size={18} />
-                        <span>Retour aux projets</span>
+                        <span>{ tr("back_to_projects") }</span>
                     </Link>
 
                     {status === "loading" && (
-                        <p className="text-secondary-text">Chargement...</p>
+                        <p className="text-secondary-text">{ tr("loading") }...</p>
                     )}
 
                     {status === "not-found" && (
-                        <p className="text-secondary-text">Projet introuvable.</p>
+                        <p className="text-secondary-text">{ tr("project_not_found") }</p>
                     )}
 
                     {status === "error" && (
                         <p className="text-secondary-text">
-                            Une erreur est survenue lors du chargement du projet.
+                            { tr("project_loading_error") }
                         </p>
                     )}
 
