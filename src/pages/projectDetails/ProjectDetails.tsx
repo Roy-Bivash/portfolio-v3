@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
@@ -87,40 +87,47 @@ export function ProjectDetails() {
             <LanguageButton />
             <div className="mx-auto min-h-screen max-w-7xl px-6 py-10 md:px-12 md:py-20 lg:px-24 lg:py-24">
                 <main>
+                    <Link to="/" target="_self" className="mb-8 transition group font-normal tracking-wide text-accent-text flex items-center gap-1">
+                        <ArrowLeft size={18} className="transition h-4 w-4 group-hover:-translate-x-2" />
 
-                    <Link
-                        to="/"
-                        className="inline-flex items-center gap-2 mb-8 text-secondary-text hover:text-accent-text transition"
-                    >
-                        <ArrowLeft size={18} />
-                        <span>{ tr("back_to_projects") }</span>
+                        <span>{tr("back_to_projects")}</span>
                     </Link>
 
                     {status === "loading" && (
-                        <p className="text-secondary-text">{ tr("loading") }...</p>
+                        <p className="text-secondary-text">{tr("loading")}...</p>
                     )}
 
                     {status === "not-found" && (
-                        <p className="text-secondary-text">{ tr("project_not_found") }</p>
+                        <p className="text-secondary-text">{tr("project_not_found")}</p>
                     )}
 
                     {status === "error" && (
                         <p className="text-secondary-text">
-                            { tr("project_loading_error") }
+                            {tr("project_loading_error")}
                         </p>
                     )}
 
                     {status === "ready" && project && (
                         <article>
-                            <h1 className="text-primary-text text-3xl sm:text-4xl lg:text-5xl font-bold mb-8">
+                            <h1 className="text-primary-text text-3xl sm:text-4xl lg:text-5xl font-bold mb-2">
                                 {t(project.title)}
                             </h1>
-                            <div className="space-y-5 leading-relaxed tracking-wide text-primary-text wrap-break-word
-                            [&_img]:max-w-full [&_img]:h-auto
-                            [&_pre]:max-w-full [&_pre]:overflow-x-auto
-                            [&_table]:block [&_table]:max-w-full [&_table]:overflow-x-auto
-                            [&_video]:max-w-full
-                            [&_iframe]:max-w-full"
+                            {project.link.link !== "" && (
+                                <a
+                                    href={project.link.link} target={project.link.target}
+                                    className="mb-8 transition w-fit group text-secondary-text font-normal tracking-wide hover:text-accent-text flex items-end gap-1"
+                                >
+                                    <span>{project.link.placeholder}</span>
+                                    <ArrowUpRight size={16} className="transition h-4 w-4 -translate-y-1 group-hover:translate-x-1 group-hover:-translate-y-2" />
+                                </a>
+                            )}
+                            <div
+                                className="space-y-5 leading-relaxed tracking-wide text-primary-text wrap-break-word
+                                    [&_img]:max-w-full [&_img]:h-auto
+                                    [&_pre]:max-w-full [&_pre]:overflow-x-auto
+                                    [&_table]:block [&_table]:max-w-full [&_table]:overflow-x-auto
+                                    [&_video]:max-w-full
+                                    [&_iframe]:max-w-full"
                             >
                                 <ReactMarkdown
                                     remarkPlugins={[remarkGfm]}
