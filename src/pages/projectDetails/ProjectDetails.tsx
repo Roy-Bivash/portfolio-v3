@@ -12,6 +12,7 @@ import { useLanguage } from "@/providers/languageProvider";
 import { getProjectById, getProjectDescriptions } from "@/libs/Projets";
 import type { ProjectType } from "@/types/ProjectType";
 import type { LocalizedInfos } from "@/types/Infos";
+import { AppFooter } from "@/components/appFooter/AppFooter";
 
 
 const sanitizeSchema: SanitizeSchema = {
@@ -85,49 +86,53 @@ export function ProjectDetails() {
         <div className="relative">
             <LanguageButton />
             <div className="mx-auto min-h-screen max-w-7xl px-6 py-10 md:px-12 md:py-20 lg:px-24 lg:py-24">
-                <Link
-                    to="/"
-                    className="inline-flex items-center gap-2 mb-8 text-secondary-text hover:text-accent-text transition"
-                >
-                    <ArrowLeft size={18} />
-                    <span>Retour aux projets</span>
-                </Link>
+                <main>
 
-                {status === "loading" && (
-                    <p className="text-secondary-text">Chargement...</p>
-                )}
+                    <Link
+                        to="/"
+                        className="inline-flex items-center gap-2 mb-8 text-secondary-text hover:text-accent-text transition"
+                    >
+                        <ArrowLeft size={18} />
+                        <span>Retour aux projets</span>
+                    </Link>
 
-                {status === "not-found" && (
-                    <p className="text-secondary-text">Projet introuvable.</p>
-                )}
+                    {status === "loading" && (
+                        <p className="text-secondary-text">Chargement...</p>
+                    )}
 
-                {status === "error" && (
-                    <p className="text-secondary-text">
-                        Une erreur est survenue lors du chargement du projet.
-                    </p>
-                )}
+                    {status === "not-found" && (
+                        <p className="text-secondary-text">Projet introuvable.</p>
+                    )}
 
-                {status === "ready" && project && (
-                    <article>
-                        <h1 className="text-primary-text text-3xl sm:text-4xl lg:text-5xl font-bold mb-8">
-                            {t(project.title)}
-                        </h1>
-                        <div className="space-y-5 leading-relaxed tracking-wide text-primary-text wrap-break-word
+                    {status === "error" && (
+                        <p className="text-secondary-text">
+                            Une erreur est survenue lors du chargement du projet.
+                        </p>
+                    )}
+
+                    {status === "ready" && project && (
+                        <article>
+                            <h1 className="text-primary-text text-3xl sm:text-4xl lg:text-5xl font-bold mb-8">
+                                {t(project.title)}
+                            </h1>
+                            <div className="space-y-5 leading-relaxed tracking-wide text-primary-text wrap-break-word
                             [&_img]:max-w-full [&_img]:h-auto
                             [&_pre]:max-w-full [&_pre]:overflow-x-auto
                             [&_table]:block [&_table]:max-w-full [&_table]:overflow-x-auto
                             [&_video]:max-w-full
                             [&_iframe]:max-w-full"
-                        >
-                            <ReactMarkdown
-                                remarkPlugins={[remarkGfm]}
-                                rehypePlugins={[rehypeRaw, [rehypeSanitize, sanitizeSchema]]}
                             >
-                                {t(description)}
-                            </ReactMarkdown>
-                        </div>
-                    </article>
-                )}
+                                <ReactMarkdown
+                                    remarkPlugins={[remarkGfm]}
+                                    rehypePlugins={[rehypeRaw, [rehypeSanitize, sanitizeSchema]]}
+                                >
+                                    {t(description)}
+                                </ReactMarkdown>
+                            </div>
+                        </article>
+                    )}
+                </main>
+                <AppFooter />
             </div>
         </div>
     );
