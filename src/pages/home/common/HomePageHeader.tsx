@@ -17,9 +17,9 @@ async function getSocialMedia(): Promise<SocialMedia[]> {
     }));
 }
 
-async function getDescriptions(infos: Infos): Promise<LocalizedInfos> {
+async function getDescriptions(infos: Infos, availableLanguages: string[]): Promise<LocalizedInfos> {
     const entries = await Promise.all(
-        infos["avalable-language"].map(async (lang) => {
+        availableLanguages.map(async (lang) => {
             const markdown = await fetchText(`/data/infos/${infos.description[lang]}`);
             return [lang, markdown] as const;
         })
@@ -29,7 +29,7 @@ async function getDescriptions(infos: Infos): Promise<LocalizedInfos> {
 }
 
 export function HomePageHeader() {
-    const { t, setAvailableLanguages } = useLanguage();
+    const { t, availableLanguages } = useLanguage();
 
     const [infos, setInfos] = useState<Infos>();
     const [description, setDescription] = useState<LocalizedInfos>({});
@@ -44,14 +44,13 @@ export function HomePageHeader() {
                     fetchJson<Infos>("/data/infos/infos.json"),
                     getSocialMedia(),
                 ]);
-                const descriptionsData = await getDescriptions(infosData);
+                const descriptionsData = await getDescriptions(infosData, availableLanguages);
 
                 if (cancelled) return;
 
                 setInfos(infosData);
                 setDescription(descriptionsData);
                 setSocialMedia(socialData);
-                setAvailableLanguages(infosData["avalable-language"]);
             } catch (error) {
                 console.error(error);
             }
@@ -62,7 +61,7 @@ export function HomePageHeader() {
         return () => {
             cancelled = true;
         };
-    }, [setAvailableLanguages]);
+    }, []);
 
     return (
         <header className="grid grid-cols-1 gap-8 md:grid-cols-5 md:items-center">

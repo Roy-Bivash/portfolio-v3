@@ -1,5 +1,5 @@
 <div align="center">
-    <img alt="ollama" src="/data/projects/pallery/home.png">
+    <img alt="home illustration" src="/data/projects/pallery/home.png">
 </div>
 
 # **Pallery**
@@ -7,7 +7,7 @@
 **Your Personal Image Hosting!**
 
 <div align="center">
-    <img alt="ollama" height="150px" src="/data/projects/pallery/logo.png">
+    <img alt="logo" height="150px" src="/data/projects/pallery/logo.png">
 </div>
 
 ### **1. Overview**

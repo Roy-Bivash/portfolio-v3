@@ -1,7 +1,7 @@
 import type { ProjectLink, ProjectType } from "@/types/ProjectType";
 import { Tag } from "../tag/Tag";
 import { useLanguage } from "@/providers/languageProvider";
-import { useAppState } from "@/providers/AppStateProvider";
+import { Link } from "react-router";
 
 interface ProjectProps {
     project: ProjectType;
@@ -9,13 +9,12 @@ interface ProjectProps {
 
 export function Project({ project }: ProjectProps) {
     const { t } = useLanguage();
-    const { openProjectDetailsModal } = useAppState();
 
-    const { title, subhead, tags, thumbnail } = project;
+    const { id, title, subhead, tags, thumbnail } = project;
     
     return (
-        <div
-            onClick={() => openProjectDetailsModal(project)}
+        <Link
+            to={`/project-details/${id}`}
             className="cursor-pointer transition lg:group-hover/list:opacity-60 lg:hover:opacity-100! group/project flex flex-col overflow-hidden lg:hover:bg-secondary-background border-b-2 border-transparent lg:hover:border-accent-text"
         >
             <img
@@ -43,6 +42,6 @@ export function Project({ project }: ProjectProps) {
                     ))}
                 </ul>
             </div>
-        </div>
+        </Link>
     )
 }

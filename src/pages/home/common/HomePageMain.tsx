@@ -2,16 +2,8 @@ import { Project, ProjectList } from "@/components/project";
 import placeholder from "@/assets/placeholder.svg";
 import { useEffect, useState } from "react";
 import type { ProjectType } from "@/types/ProjectType";
-import { fetchJson } from "@/libs/Fetch";
+import { getProjects } from "@/libs/Projets";
 
-async function getProjects(): Promise<ProjectType[]> {
-    const data = await fetchJson<ProjectType[]>("/data/projects/list.json");
-
-    return data.map((el) => ({
-        ...el,
-        thumbnail: `/data/projects/${el.thumbnail}`,
-    }));
-}
 
 export function HomePageMain() {
     const INITIAL_VISIBLE = 6;

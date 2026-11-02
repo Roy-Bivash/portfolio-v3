@@ -1,15 +1,20 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+import { fetchJson } from "@/libs/Fetch";
+import { useAppState } from "@/providers/AppStateProvider";
 
 export type LanguageCode = string;
 export type Localized = Record<LanguageCode, string>;
 
 const STORAGE_KEY = "selected-language";
 
+interface AvailableLanguageFile {
+    "avalable-language": LanguageCode[];
+}
+
 interface LanguageContextValue {
     availableLanguages: LanguageCode[];
     language: LanguageCode;
     setLanguage: (lang: LanguageCode) => void;
-    setAvailableLanguages: (langs: LanguageCode[]) => void;
     t: (field: Localized | undefined) => string;
 }
 
@@ -27,28 +32,46 @@ function writeStoredLanguage(lang: LanguageCode) {
     try {
         localStorage.setItem(STORAGE_KEY, lang);
     } catch {
-        // TODO
+        // ignorer
     }
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-    const [availableLanguages, setAvailableState] = useState<LanguageCode[]>([]);
-    const [requested, setRequested] = useState<LanguageCode | null>(
-        readStoredLanguage
-    );
+    const { setLoading } = useAppState();
+    const [availableLanguages, setAvailableLanguages] = useState<LanguageCode[]>([]);
+    const [loaded, setLoaded] = useState(false);
+    const [requested, setRequested] = useState<LanguageCode | null>(readStoredLanguage);
+
+    useEffect(() => {
+        let cancelled = false;
+        setLoading(true);
+
+        fetchJson<AvailableLanguageFile>("/data/infos/avalable-language.json")
+            .then((data) => {
+                if (cancelled) return;
+
+                const langs = data["avalable-language"] ?? [];
+                if (langs.length === 0) {
+                    console.error('No languages found: "avalable-language" is missing or empty in /data/infos/avalable-language.json');
+                }
+                setAvailableLanguages(langs);
+            })
+            .catch(console.error)
+            .finally(() => {
+                if (cancelled) return;
+                setLoaded(true);
+                setLoading(false);
+            });
+
+        return () => {
+            cancelled = true;
+        };
+    }, [setLoading]);
 
     const language =
         requested && availableLanguages.includes(requested)
             ? requested
             : availableLanguages[0] ?? "";
-
-    const setAvailableLanguages = useCallback((langs: LanguageCode[]) => {
-        setAvailableState((prev) =>
-            prev.length === langs.length && prev.every((l, i) => l === langs[i])
-                ? prev
-                : langs
-        );
-    }, []);
 
     const setLanguage = useCallback(
         (lang: LanguageCode) => {
@@ -65,45 +88,25 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     const t = useCallback(
         (field: Localized | undefined) => {
             if (!field) return "";
-            return (
-                field[language] ??
-                field[availableLanguages[0]] ??
-                Object.values(field)[0] ??
-                ""
-            );
+            return field[language] ?? field[availableLanguages[0]] ?? Object.values(field)[0] ?? "";
         },
         [language, availableLanguages]
     );
 
     const value = useMemo(
-        () => ({ availableLanguages, language, setLanguage, setAvailableLanguages, t }),
-        [availableLanguages, language, setLanguage, setAvailableLanguages, t]
+        () => ({ availableLanguages, language, setLanguage, t }),
+        [availableLanguages, language, setLanguage, t]
     );
 
-    return (
-        <LanguageContext.Provider value={value}>
-            {children}
-        </LanguageContext.Provider>
-    );
+    // Pas de render tant que les langues ne sont pas definie.
+
+    if (!loaded) return null;
+
+    return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
 }
 
 export function useLanguage(): LanguageContextValue {
     const ctx = useContext(LanguageContext);
-    if (!ctx) {
-        throw new Error("useLanguage must be used inside <LanguageProvider>");
-    }
+    if (!ctx) throw new Error("useLanguage must be used inside <LanguageProvider>");
     return ctx;
-}
-
-export function useRegisterLanguages(languages: LanguageCode[]) {
-    const { setAvailableLanguages } = useLanguage();
-
-    useEffect(() => {
-        setAvailableLanguages(languages);
-    }, [languages, setAvailableLanguages]);
-}
-
-export function AvailableLanguages({ languages }: { languages: LanguageCode[] }) {
-    useRegisterLanguages(languages);
-    return null;
 }
