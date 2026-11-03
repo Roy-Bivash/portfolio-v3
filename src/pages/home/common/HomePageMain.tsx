@@ -22,6 +22,7 @@ export function HomePageMain() {
                 const prjs = await getProjects();
 
                 if (cancelled) return;
+                prjs.reverse();
                 setProjectList(prjs);
             } catch (error) {
                 console.error(error);

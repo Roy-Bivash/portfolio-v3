@@ -1,14 +1,14 @@
 [
     {
         "id": 1,
-        "thumbnail": "",
+        "thumbnail": "nasa-rover-images/logo.png",
         "title": {
             "fr": "NASA Rover Images",
             "en": "NASA Rover Images"
         },
         "subhead": {
-            "fr": "",
-            "en": ""
+            "fr": "Visualiseur Astronomique APOD (API Integration)",
+            "en": "NASA APOD Viewer (API Integration Project)"
         },
         "description-file": {
             "fr": "nasa-rover-images/description-fr.md",
@@ -43,6 +43,34 @@
             "target": "_blank"
         }
     },
+    {
+        "id": 3,
+        "thumbnail": "win-dashboard-fact/illustration-win-dashboard-fact.png",
+        "title": {
+            "fr": "Windows Dashboard",
+            "en": "Windows Dashboard"
+        },
+        "subhead": {
+            "fr": "Back-Office de Gestion Facturation (Application de Bureau)",
+            "en": "Billing Management Back-Office Application (Desktop Application)"
+        },
+        "description-file": {
+            "fr": "win-dashboard-fact/description-fr.md",
+            "en": "win-dashboard-fact/description-en.md"
+        },
+        "tags": ["PHP", "MySQL", "Bootstrap", "Javascript"],
+        "link": {
+            "placeholder": "",
+            "link": "",
+            "target": "_blank"
+        }
+    },
+
+
+
+
+
+
     {
         "id": 99,
         "thumbnail": "pallery/logo.png",
