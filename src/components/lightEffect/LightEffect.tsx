@@ -1,10 +1,24 @@
-import { usePointerPosition } from "@/hooks/usePointerPosition";
+import { useEffect, useRef } from "react";
 
-export function LightEffect(){
-    const pointerPosition = usePointerPosition();
+export function LightEffect() {
+    const ref = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleMove = (e: PointerEvent) => {
+            ref.current?.style.setProperty("--x", `${e.clientX}px`);
+            ref.current?.style.setProperty("--y", `${e.clientY}px`);
+        };
+        
+        window.addEventListener("pointermove", handleMove);
+
+        return () => window.removeEventListener("pointermove", handleMove);
+    }, []);
+
     return (
-        <div className="pointer-events-none fixed inset-0 z-50 transition duration-300" 
-            style={{background: `radial-gradient(600px at ${pointerPosition.x}px ${pointerPosition.y}px, rgb(16, 110, 160, 0.205), transparent 80%)`}}>
-        </div>
-    )
+        <div
+            ref={ref}
+            className="pointer-events-none fixed inset-0 z-50"
+            style={{ background: "radial-gradient(600px at var(--x, 50%) var(--y, 50%), rgb(16 110 160 / 0.205), transparent 80%)" }}
+        />
+    );
 }
