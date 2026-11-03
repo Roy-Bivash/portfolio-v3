@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "thumbnail": "nasa-rover-images/logo.png",
+        "thumbnail": "nasa-rover-images/nasa-logo.png",
         "title": {
             "fr": "NASA Rover Images",
             "en": "NASA Rover Images"
@@ -14,7 +14,7 @@
             "fr": "nasa-rover-images/description-fr.md",
             "en": "nasa-rover-images/description-en.md"
         },
-        "tags": [],
+        "tags": ["PHP", "HTML", "CSS", "Javascript"],
         "link": {
             "placeholder": "",
             "link": "",
@@ -39,7 +39,7 @@
         "tags": ["PHP", "MySQL", "Bootstrap", "Javascript"],
         "link": {
             "placeholder": "GitHub",
-            "link": "https://github.com/Roy-Bivash/Projet_Stage_Facturation.git",
+            "link": "https://github.com/Roy-Bivash/Projet_Stage_Facturation",
             "target": "_blank"
         }
     },
@@ -58,10 +58,54 @@
             "fr": "win-dashboard-fact/description-fr.md",
             "en": "win-dashboard-fact/description-en.md"
         },
-        "tags": ["PHP", "MySQL", "Bootstrap", "Javascript"],
+        "tags": ["C#", ".NET Framework", "MySQL"],
         "link": {
             "placeholder": "",
             "link": "",
+            "target": "_blank"
+        }
+    },
+    {
+        "id": 4,
+        "thumbnail": "morpion/morpion.png",
+        "title": {
+            "fr": "Jeu de Morpion (Tic-Tac-Toe)",
+            "en": "Tic-Tac-Toe Game Implementation"
+        },
+        "subhead": {
+            "fr": "",
+            "en": ""
+        },
+        "description-file": {
+            "fr": "morpion/description-fr.md",
+            "en": "morpion/description-en.md"
+        },
+        "tags": ["HTML/CSS", "JavaScript"],
+        "link": {
+            "placeholder": "DEMO",
+            "link": "https://roy-bivash.github.io/morpion/",
+            "target": "_blank"
+        }
+    },
+    {
+        "id": 5,
+        "thumbnail": "aim-trainer/cible.png",
+        "title": {
+            "fr": "Aim Trainer 2D avec PixiJS",
+            "en": "2D Aim Trainer using PixiJS"
+        },
+        "subhead": {
+            "fr": "",
+            "en": ""
+        },
+        "description-file": {
+            "fr": "aim-trainer/description-fr.md",
+            "en": "aim-trainer/description-en.md"
+        },
+        "tags": ["Pixi.js", "HTML/CSS", "JavaScript"],
+        "link": {
+            "placeholder": "GitHub",
+            "link": "https://github.com/Roy-Bivash/aim-trainer",
             "target": "_blank"
         }
     },
