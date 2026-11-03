@@ -49,7 +49,3 @@
 ### Licence
 
 Projet sous licence MIT.
-
----
-
-## English version

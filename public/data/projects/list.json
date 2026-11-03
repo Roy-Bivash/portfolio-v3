@@ -109,6 +109,28 @@
             "target": "_blank"
         }
     },
+    {
+        "id": 6,
+        "thumbnail": "rent-a-bike/rent-a-bike-logo.png",
+        "title": {
+            "fr": "Rent A Bike",
+            "en": "Rent A Bike"
+        },
+        "subhead": {
+            "fr": "Plateforme de Location de Vélos en Libre-Service",
+            "en": "On-Demand Bike Rental Platform"
+        },
+        "description-file": {
+            "fr": "rent-a-bike/description-fr.md",
+            "en": "rent-a-bike/description-en.md"
+        },
+        "tags": ["React", "NestJS", "MySQL"],
+        "link": {
+            "placeholder": "",
+            "link": "",
+            "target": "_blank"
+        }
+    },
 
 
 
