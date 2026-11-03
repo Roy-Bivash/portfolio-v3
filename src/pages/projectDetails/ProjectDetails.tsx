@@ -85,8 +85,8 @@ export function ProjectDetails() {
     return (
         <div className="relative">
             <LanguageButton />
-            <div className="mx-auto min-h-screen max-w-7xl px-6 py-10 md:px-12 md:py-20 lg:px-24 lg:py-24">
-                <main>
+            <div className="mx-auto flex flex-col min-h-screen max-w-7xl px-6 py-10 md:px-12 md:py-20 lg:px-24 lg:py-24">
+                <main className="flex-1">
                     <Link to="/" target="_self" className="mb-8 transition group font-normal tracking-wide text-accent-text flex items-center gap-1">
                         <ArrowLeft size={18} className="transition h-4 w-4 group-hover:-translate-x-2" />
 

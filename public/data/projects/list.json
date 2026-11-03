@@ -23,6 +23,28 @@
     },
     {
         "id": 2,
+        "thumbnail": "",
+        "title": {
+            "fr": "Application de facturation",
+            "en": "Billing application"
+        },
+        "subhead": {
+            "fr": "Système de Facturation Web pour Gestion Commerciale",
+            "en": "Client Invoicing and Billing Application"
+        },
+        "description-file": {
+            "fr": "facturation-php/description-fr.md",
+            "en": "facturation-php/description-en.md"
+        },
+        "tags": ["PHP", "MySQL", "Bootstrap", "Javascript"],
+        "link": {
+            "placeholder": "GitHub",
+            "link": "https://github.com/Roy-Bivash/Projet_Stage_Facturation.git",
+            "target": "_blank"
+        }
+    },
+    {
+        "id": 99,
         "thumbnail": "pallery/logo.png",
         "title": {
             "fr": "Pallery",
