@@ -132,6 +132,29 @@
         }
     },
 
+    {
+        "id": 7,
+        "thumbnail": "brightness/brightness-logo.png",
+        "title": {
+            "fr": "Brightness Control App",
+            "en": "Brightness Control App"
+        },
+        "subhead": {
+            "fr": "Application desktop légère pour piloter la luminosité des écrans sous Ubuntu",
+            "en": "A lightweight desktop app to control screen brightness on Ubuntu"
+        },
+        "description-file": {
+            "fr": "brightness/description-fr.md",
+            "en": "brightness/description-en.md"
+        },
+        "tags": ["React", "NestJS", "MySQL"],
+        "link": {
+            "placeholder": "GitHub",
+            "link": "https://github.com/Roy-Bivash/Brightness",
+            "target": "_blank"
+        }
+    },
+
 
 
 
