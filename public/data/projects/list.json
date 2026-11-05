@@ -147,7 +147,7 @@
             "fr": "brightness/description-fr.md",
             "en": "brightness/description-en.md"
         },
-        "tags": ["React", "NestJS", "MySQL"],
+        "tags": ["Rust", "React", "Tauri", "Typescript"],
         "link": {
             "placeholder": "GitHub",
             "link": "https://github.com/Roy-Bivash/Brightness",
