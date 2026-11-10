@@ -196,5 +196,27 @@
             "link": "https://github.com/Roy-Bivash/Pallery",
             "target": "_blank"
         }
+    },
+    {
+        "id": 10,
+        "thumbnail": "game-of-life/...",
+        "title": {
+            "fr": "Game of Life",
+            "en": "Game of Life"
+        },
+        "subhead": {
+            "fr": "Simulation d’automate cellulaire dans le navigateur",
+            "en": "Browser-based Cellular Automaton Simulation"
+        },
+        "description-file": {
+            "fr": "pallery/description-fr.md",
+            "en": "pallery/description-en.md"
+        },
+        "tags": ["React", "TypeScript", "PhaserJS", "CSS"],
+        "link": {
+            "placeholder": "GitHub",
+            "link": "https://github.com/Roy-Bivash/game-of-life",
+            "target": "_blank"
+        }
     }
 ]
