@@ -125,13 +125,20 @@ export function ProjectDetails() {
                                 className="prose max-w-none text-primary-text wrap-break-word
                                     [&_img]:max-w-full [&_img]:h-auto
                                     [&_pre]:max-w-full [&_pre]:overflow-x-auto
-                                    [&_table]:block [&_table]:max-w-full [&_table]:overflow-x-auto
+                                     [&_table]:max-w-full [&_table]:overflow-x-auto
                                     [&_video]:max-w-full
                                     [&_iframe]:max-w-full"
                             >
                                 <ReactMarkdown
                                     remarkPlugins={[remarkGfm]}
                                     rehypePlugins={[rehypeRaw, [rehypeSanitize, sanitizeSchema]]}
+                                    components={{
+                                        table: ({ node, ...props }) => (
+                                            <div className="my-8 overflow-x-auto rounded-lg border border-secondary-text/20">
+                                                <table {...props} />
+                                            </div>
+                                        ),
+                                    }}
                                 >
                                     {t(description)}
                                 </ReactMarkdown>
