@@ -1,4 +1,4 @@
-# WOT TRACK — Bot de surveillance de clan World of Tanks
+# WOT TRACK - Bot de surveillance de clan World of Tanks
 
 **Description**  
 WOT TRACK est un bot Python qui surveille automatiquement les membres d’un clan World of Tanks et envoie une notification Discord lorsqu’un nouveau joueur rejoint le clan. Le bot interroge régulièrement l’API officielle Wargaming (via la bibliothèque `requests`), compare la liste des membres actuels à celle connue, récupère les informations détaillées des nouveaux joueurs, puis publie un message formaté sur un webhook Discord.

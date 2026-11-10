@@ -1,4 +1,4 @@
-# Game of Life — Simulation d’automate cellulaire dans le navigateur
+# Game of Life - Simulation d’automate cellulaire dans le navigateur
 
 **Description**  
 Game of Life est une implémentation de Conway’s **Game of Life**, une simulation d’automate cellulaire qui s’exécute dans le navigateur. L’interface est construite avec React, tandis que le rendu de la grille et la logique du jeu reposent sur le framework **Phaser**.

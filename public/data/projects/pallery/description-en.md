@@ -2,7 +2,7 @@
     <img alt="home illustration" src="/data/projects/pallery/home.png">
 </div>
 
-# Pallery — Personal Pinterest-Style Image Hosting
+# Pallery - Personal Pinterest-Style Image Hosting
 
 <div align="center">
     <img alt="logo" height="150px" src="/data/projects/pallery/logo.png">

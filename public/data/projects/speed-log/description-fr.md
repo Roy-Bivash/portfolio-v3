@@ -1,4 +1,4 @@
-# SPEED LOG — Suivi privé de trajets vélo et footing
+# SPEED LOG - Suivi privé de trajets vélo et footing
 
 **Description**  
 SPEED LOG est une application mobile cross-plateforme (iOS/Android) développée avec React Native et Expo, conçue pour suivre ses trajets de vélo ou de footing sans inscription, sans compte et sans transfert de données personnelles. L’application a été créée pour un besoin personnel : lancer une session, suivre sa vitesse en temps réel, puis retrouver l’historique et les détails de chaque trajet. Toutes les données restent stockées localement sur le téléphone via SQLite.

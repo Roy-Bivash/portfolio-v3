@@ -2,7 +2,7 @@
 
 **Application desktop légère pour piloter la luminosité des écrans sous Ubuntu.**
 
-Projet personnel — conception, développement et documentation.
+Projet personnel - conception, développement et documentation.
 
 ### Contexte et objectif
 

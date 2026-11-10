@@ -2,7 +2,7 @@
 
 **A lightweight desktop app to control screen brightness on Ubuntu.**
 
-Personal project — design, development and documentation.
+Personal project - design, development and documentation.
 
 ### Context and goal
 
@@ -42,7 +42,7 @@ The goal was to provide a lightweight, fast and intuitive alternative without un
 
 ### What this project demonstrates
 
-- **As a developer**: experience with a modern desktop stack — ReactTS / Rust / Tauri — system integration and packaging.
+- **As a developer**: experience with a modern desktop stack - ReactTS / Rust / Tauri - system integration and packaging.
 - **As a project manager**: scoping a concrete user need, prioritizing an MVP and documenting the project.
 - **As a product owner**: user-centered thinking, roadmap definition and continuous UX improvement.
 

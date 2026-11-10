@@ -1,4 +1,4 @@
-# Game of Life — Browser-based Cellular Automaton Simulation
+# Game of Life - Browser-based Cellular Automaton Simulation
 
 **Overview**  
 Game of Life is an implementation of Conway’s **Game of Life**, a cellular automaton simulation that runs in the browser. The UI is built with React, while grid rendering and game logic are handled by the **Phaser** game framework.
