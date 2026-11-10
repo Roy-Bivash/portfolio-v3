@@ -131,7 +131,6 @@
             "target": "_blank"
         }
     },
-
     {
         "id": 7,
         "thumbnail": "brightness/brightness-logo.png",
@@ -154,14 +153,30 @@
             "target": "_blank"
         }
     },
-
-
-
-
-
-
     {
-        "id": 99,
+        "id": 8,
+        "thumbnail": "pulsar/...",
+        "title": {
+            "fr": "Pulsar",
+            "en": "Pulsar"
+        },
+        "subhead": {
+            "fr": "Application de chat avec IA locale",
+            "en": "Local AI Chat Application"
+        },
+        "description-file": {
+            "fr": "pulsar/description-fr.md",
+            "en": "pulsar/description-en.md"
+        },
+        "tags": ["python", "Vue.js", "TypeScript", "CSS", "Docker"],
+        "link": {
+            "placeholder": "GitHub",
+            "link": "https://github.com/Roy-Bivash/pulsar",
+            "target": "_blank"
+        }
+    },
+    {
+        "id": 9,
         "thumbnail": "pallery/logo.png",
         "title": {
             "fr": "Pallery",
