@@ -122,7 +122,7 @@ export function ProjectDetails() {
                                 </a>
                             )}
                             <div
-                                className="space-y-5 leading-relaxed tracking-wide text-primary-text wrap-break-word
+                                className="prose max-w-none text-primary-text wrap-break-word
                                     [&_img]:max-w-full [&_img]:h-auto
                                     [&_pre]:max-w-full [&_pre]:overflow-x-auto
                                     [&_table]:block [&_table]:max-w-full [&_table]:overflow-x-auto
