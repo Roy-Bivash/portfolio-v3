@@ -11,11 +11,15 @@ export function Project({ project }: ProjectProps) {
     const { t } = useLanguage();
 
     const { id, title, subhead, tags, thumbnail } = project;
-    
+
     return (
         <Link
             to={`/project-details/${id}`}
-            className="cursor-pointer transition lg:group-hover/list:opacity-60 lg:hover:opacity-100! group/project flex flex-col overflow-hidden lg:hover:bg-secondary-background border-b-2 border-transparent lg:hover:border-accent-text"
+            className="cursor-pointer transition duration-300 flex flex-col overflow-hidden border-b-2 border-transparent
+                bg-secondary-background lg:hover:bg-accent-background!
+                lg:group-hover/list:bg-transparent lg:group-hover/list:opacity-80 lg:group-hover/list:saturate-50
+                lg:hover:opacity-100! lg:hover:saturate-100! lg:hover:border-accent-text
+                lg:hover:-translate-y-1 lg:hover:shadow-[0_8px_24px_-8px_rgba(194,65,12,0.20)]"
         >
             <img
                 src={thumbnail}
@@ -25,13 +29,6 @@ export function Project({ project }: ProjectProps) {
             <div className="flex flex-col flex-1 p-4">
                 <h6 className="flex items-end gap-1 group-hover/project:text-accent-text font-semibold text-primary-text">
                     <span>{t(title)}</span>
-                    {/* {href && href != "" && (
-                        <svg className="transition h-4 w-4 mb-1 group-hover/project:translate-x-1 group-hover/project:-translate-y-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g id="SVGRepo_iconCarrier">
-                                <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
-                            </g>
-                        </svg>
-                    )} */}
                 </h6>
                 <p className="text-secondary-text py-2">
                     {t(subhead)}
