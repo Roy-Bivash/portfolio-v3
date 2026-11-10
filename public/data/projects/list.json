@@ -218,5 +218,49 @@
             "link": "https://github.com/Roy-Bivash/game-of-life",
             "target": "_blank"
         }
+    },
+    {
+        "id": 11,
+        "thumbnail": "wot-track/...",
+        "title": {
+            "fr": "WOT Track",
+            "en": "WOT Track"
+        },
+        "subhead": {
+            "fr": "Bot de surveillance de clan World of Tanks",
+            "en": "World of Tanks Clan Monitoring Bot"
+        },
+        "description-file": {
+            "fr": "wot-track/description-fr.md",
+            "en": "wot-track/description-en.md"
+        },
+        "tags": ["Python", "Discord", "Webhooks", "Bot"],
+        "link": {
+            "placeholder": "GitHub",
+            "link": "https://github.com/Roy-Bivash/wot-track",
+            "target": "_blank"
+        }
+    },
+    {
+        "id": 12,
+        "thumbnail": "speed-log/...",
+        "title": {
+            "fr": "Speed Log",
+            "en": "Speed Log"
+        },
+        "subhead": {
+            "fr": "Suivi privé de trajets vélo et footing",
+            "en": "Private Cycling and Running Tracker"
+        },
+        "description-file": {
+            "fr": "wot-track/description-fr.md",
+            "en": "wot-track/description-en.md"
+        },
+        "tags": ["React Native", "NativeWind", "SQLite", "GPS", "IOS", "Android"],
+        "link": {
+            "placeholder": "GitHub",
+            "link": "https://github.com/Roy-Bivash/speed-log",
+            "target": "_blank"
+        }
     }
 ]
