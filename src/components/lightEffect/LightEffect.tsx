@@ -18,7 +18,6 @@ export function LightEffect() {
         <div
             ref={ref}
             className="pointer-events-none fixed inset-0 z-50"
-            style={{ background: "radial-gradient(600px at var(--x, 50%) var(--y, 50%), rgb(16 110 160 / 0.205), transparent 80%)" }}
-        />
+            style={{ background: "radial-gradient(600px at var(--x, 50%) var(--y, 50%), rgb(194 65 12 / 0.08), transparent 85%)" }}        />
     );
 }

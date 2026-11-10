@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-@theme {
+/* @theme {
     --color-primary-text: #d6def5;
     --color-secondary-text: rgb(136, 146, 176);
     --color-background-text: rgba(136, 146, 176, 0.7);
@@ -9,6 +9,16 @@
     --color-accent-text: rgb(100, 255, 218);
     --color-accent-background: rgba(81, 124, 114, 0.315);
     --color-secondary-background: rgba(161, 161, 161, 0.13);
+} */
+
+@theme {
+    --color-primary-text: #1C1917;         /* stone-900 */
+    --color-secondary-text: #78716C;       /* stone-500 */
+    --color-background-text: rgba(120, 113, 108, 0.75);
+    --color-background: #FDFBF7;           /* blanc chaud */
+    --color-accent-text: #C2410C;          /* orange-700 */
+    --color-accent-background: rgba(194, 65, 12, 0.10);
+    --color-secondary-background: rgba(28, 25, 23, 0.04);
 }
 
 html {
