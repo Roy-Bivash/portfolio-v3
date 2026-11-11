@@ -15,11 +15,8 @@ export function Project({ project }: ProjectProps) {
     return (
         <Link
             to={`/project-details/${id}`}
-            className="cursor-pointer transition duration-300 flex flex-col overflow-hidden border-b-2 border-transparent
-                bg-secondary-background lg:hover:bg-accent-background!
-                lg:group-hover/list:bg-transparent lg:group-hover/list:opacity-80 lg:group-hover/list:saturate-50
-                lg:hover:opacity-100! lg:hover:saturate-100! lg:hover:border-accent-text
-                lg:hover:-translate-y-1 lg:hover:shadow-[0_8px_24px_-8px_rgba(194,65,12,0.20)]"
+            className="group/project cursor-pointer transition duration-300 flex flex-col overflow-hidden border-b-2 border-transparent
+                bg-secondary-background lg:hover:bg-accent-background lg:hover:border-accent-text lg:hover:-translate-y-1 lg:hover:shadow-[0_8px_24px_-8px_rgba(194,65,12,0.20)]"
         >
             <img
                 src={thumbnail}
