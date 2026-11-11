@@ -10,7 +10,7 @@ interface CaseStudyProps {
 export function CaseStudy({ caseStudy }: CaseStudyProps) {
     const { t, tList } = useLanguage();
 
-    const { id, title, subhead, tags } = caseStudy;
+    const { id, title, subhead, introduction, tags } = caseStudy;
 
     return (
         <Link
@@ -19,11 +19,14 @@ export function CaseStudy({ caseStudy }: CaseStudyProps) {
                 bg-secondary-background lg:hover:bg-accent-background lg:hover:border-accent-text lg:hover:-translate-y-1 lg:hover:shadow-[0_8px_24px_-8px_rgba(194,65,12,0.20)]"
         >
             <div className="flex flex-col flex-1 p-4">
+                <p className="text-secondary-text py-1">
+                    {t(subhead)}
+                </p>
                 <h6 className="flex items-end gap-1 group-hover/project:text-accent-text font-semibold text-primary-text">
                     <span>{t(title)}</span>
                 </h6>
-                <p className="text-secondary-text py-2">
-                    {t(subhead)}
+                <p className="text-secondary-text py-3">
+                    {t(introduction)}
                 </p>
                 <ul className="pt-2 flex flex-row flex-wrap gap-y-3 gap-x-1">
                     {tList(tags).map((el, i) => (

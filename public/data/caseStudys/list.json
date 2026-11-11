@@ -9,6 +9,10 @@
             "fr": "Étude de cas 01 · DGFIP · 2025 – 2026",
             "en": "TODO"
         },
+        "introduction": {
+            "fr": "TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elitTODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            "en": "TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
         "description-file": {
             "fr": "etude-1/description-fr.md",
             "en": "etude-1/description-en.md"
