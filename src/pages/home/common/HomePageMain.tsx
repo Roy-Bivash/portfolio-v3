@@ -52,7 +52,8 @@ export function HomePageMain() {
     return (
         <main className="my-18 space-y-12">
             <section id="case-study">
-                <h2 className="text-secondary-text text-4xl mb-6 capitalize">{ tr("case_study") }</h2>
+                <h5 className="text-secondary-text text-sm md:text-lg mb-1 uppercase tracking-wider leading-relaxed">{ tr("case_study") }</h5>
+                <h2 className="text-primary-text text-xl md:text-4xl mb-2 md:mb-6 tracking-wider leading-tight">{ tr("case_study_title_h2") }</h2>
                 <CaseStudyList>
                     {caseStudyList.map((el: CaseStudyType) => (
                         <CaseStudy
@@ -64,7 +65,8 @@ export function HomePageMain() {
             </section>
 
             <section id="projects">
-                <h2 className="text-secondary-text text-4xl mb-6 capitalize">{ tr("projects") }</h2>
+                <h5 className="text-secondary-text text-sm md:text-lg mb-1 uppercase tracking-wider leading-relaxed">{ tr("projects") }</h5>            
+                <h2 className="text-primary-text text-xl md:text-4xl mb-2 md:mb-6 tracking-wider leading-tight">{ tr("project_title_h2") }</h2>
                 <ProjectList>
                     {firstProjects.map((el: ProjectType) => (
                         <Project

@@ -2,11 +2,35 @@
     {
         "id": 1,
         "title": {
+            "fr": "Performances PHP à la DGFIP",
+            "en": "TODO"
+        },
+        "subhead": {
+            "fr": "Étude de cas 01 · DGFIP · 2024 – 2025",
+            "en": "TODO"
+        },
+        "introduction": {
+            "fr": "TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elitTODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            "en": "TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        "description-file": {
+            "fr": "etude-1/description-fr.md",
+            "en": "etude-1/description-en.md"
+        },
+        "tags": {
+            "fr": ["Priorisation", "Backlog", "Conduite du changement"],
+            "en": ["test"]
+        }
+        
+    },
+    {
+        "id": 2,
+        "title": {
             "fr": "TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.",
             "en": "TODO"
         },
         "subhead": {
-            "fr": "Étude de cas 01 · DGFIP · 2025 – 2026",
+            "fr": "Étude de cas 02 · DGFIP · 2025 – 2026",
             "en": "TODO"
         },
         "introduction": {

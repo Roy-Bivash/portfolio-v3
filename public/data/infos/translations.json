@@ -54,5 +54,13 @@
     "case_study": {
         "fr": "Étude de cas",
         "en": "Case Study"
+    },
+    "case_study_title_h2": {
+        "fr": "Comprendre, concevoir, améliorer",
+        "en": "Understand, design, improve"
+    },
+    "project_title_h2": {
+        "fr": "Imaginer, expérimenter, développer",
+        "en": "Imagine, experiment, develop"
     }
 }
