@@ -5,10 +5,7 @@ import type { LocalizedInfos } from "@/types/Infos";
 export async function getProjects(): Promise<ProjectType[]> {
     const data = await fetchJson<ProjectType[]>("/data/projects/list.json");
 
-    return data.map((el) => ({
-        ...el,
-        thumbnail: `/data/projects/${el.thumbnail}`,
-    }));
+    return data;
 }
 
 export async function getProjectById(id: string): Promise<ProjectType | undefined> {

@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "title": {
+            "fr": "TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            "en": "TODO"
+        },
+        "subhead": {
+            "fr": "Étude de cas 01 · DGFIP · 2025 – 2026",
+            "en": "TODO"
+        },
+        "description-file": {
+            "fr": "etude-1/description-fr.md",
+            "en": "etude-1/description-en.md"
+        },
+        "tags": {
+            "fr": ["Priorisation", "Backlog", "Conduite du changement"],
+            "en": ["test"]
+        }
+        
+    }
+]

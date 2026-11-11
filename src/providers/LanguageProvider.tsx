@@ -3,7 +3,8 @@ import { fetchJson } from "@/libs/Fetch";
 import { useAppState } from "@/providers/AppStateProvider";
 
 export type LanguageCode = string;
-export type Localized = Record<LanguageCode, string>;
+export type Localized<T = string> = Record<LanguageCode, T>;
+export type LocalizedList = Localized<string[]>;
 export type Translations = Record<string, Localized>;
 
 const STORAGE_KEY = "selected-language";
@@ -18,9 +19,11 @@ interface LanguageContextValue {
     availableLanguages: LanguageCode[];
     language: LanguageCode;
     setLanguage: (lang: LanguageCode) => void;
-    /** Translate an inline Localized object (e.g. from project data). */
+    /** Translate an inline Localized string. */
     t: (field: Localized | undefined) => string;
-    /** Translate a key from translations.json (e.g. "see_more"). */
+    /** Translate an inline localized list (e.g. tags). */
+    tList: (field: Localized<string[]> | undefined) => string[];
+    /** Translate a key from translations.json. */
     tr: (key: string) => string;
 }
 
@@ -99,12 +102,34 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
         [availableLanguages]
     );
 
-    const t = useCallback(
-        (field: Localized | undefined) => {
-            if (!field) return "";
-            return field[language] ?? field[availableLanguages[0]] ?? Object.values(field)[0] ?? "";
+    const resolve = useCallback(
+        <T,>(field: Localized<T> | undefined, isEmpty: (v: T) => boolean): T | undefined => {
+            if (!field) return undefined;
+
+            const candidates = [
+                field[language],
+                field[availableLanguages[0]],
+                ...Object.values(field),
+            ];
+
+            // first non-empty value wins, else fall back to the first defined one
+            return (
+                candidates.find((v) => v !== undefined && !isEmpty(v)) ??
+                candidates.find((v) => v !== undefined)
+            );
         },
         [language, availableLanguages]
+    );
+
+    const t = useCallback(
+        (field: Localized | undefined) => resolve(field, (v) => v === "") ?? "",
+        [resolve]
+    );
+
+    const tList = useCallback(
+        (field: Localized<string[]> | undefined) =>
+            resolve(field, (v) => v.length === 0) ?? [],
+        [resolve]
     );
 
     const tr = useCallback(
@@ -120,8 +145,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     );
 
     const value = useMemo(
-        () => ({ availableLanguages, language, setLanguage, t, tr }),
-        [availableLanguages, language, setLanguage, t, tr]
+        () => ({ availableLanguages, language, setLanguage, t, tList, tr }),
+        [availableLanguages, language, setLanguage, t, tList, tr]
     );
 
     // Pas de render tant que les langues ne sont pas definie.

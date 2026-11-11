@@ -27,20 +27,32 @@
         "fr": "Projet introuvable",
         "en": "Project not found"
     },
+    "study_not_found": {
+        "fr": "Etude de cas introuvable",
+        "en": "Case study not found"
+    },
     "project_loading_error": {
         "fr": "Une erreur est survenue lors du chargement du projet.",
         "en": "An error occurred while loading the project."
+    },
+    "case_study_loading_error": {
+        "fr": "Une erreur est survenue lors du chargement de l'étude d cas.",
+        "en": "An error occurred while loading the case study."
     },
     "back_to_projects": {
         "fr": "Retour aux projets",
         "en": "Back to projects"
     },
     "no_rights_reserved_Free_to": {
-        "fr": "Aucun droit réservé. Libre de",
-        "en": "No rights reserved. Free to"
+        "fr": " Aucun droit réservé. Libre d'",
+        "en": " No rights reserved. Free to "
     },
     "use_and_modify": {
         "fr": "utiliser et modifier.",
         "en": "use and modify."
+    },
+    "case_study": {
+        "fr": "Étude de cas",
+        "en": "Case Study"
     }
 }
