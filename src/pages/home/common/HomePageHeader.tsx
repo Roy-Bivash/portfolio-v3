@@ -89,10 +89,21 @@ export function HomePageHeader() {
                     </ul>
                 </section>
             </div>
-
-            <section id="about" className="md:col-span-3 lg:bg-secondary-background lg:p-4 lg:shadow-lg">
-                <div className="space-y-5 leading-relaxed tracking-wide text-secondary-text">
-                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            <section id="about" className="md:col-span-3 lg:bg-secondary-background lg:p-4">
+                <div className="space-y-5 leading-relaxed tracking-wide text-primary-text">
+                    <ReactMarkdown
+                        remarkPlugins={[remarkGfm]}
+                        components={{
+                            a: ({ node, ...props }) => (
+                                <a
+                                    {...props}
+                                    className="transition hover:text-accent-text hover:underline"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                />
+                            ),
+                        }}
+                    >
                         {t(description)}
                     </ReactMarkdown>
                 </div>

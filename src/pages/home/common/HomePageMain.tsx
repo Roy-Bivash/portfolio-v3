@@ -1,5 +1,4 @@
 import { Project, ProjectList } from "@/components/project";
-import placeholder from "@/assets/placeholder.svg";
 import { useEffect, useState } from "react";
 import type { ProjectType } from "@/types/ProjectType";
 import { getProjects } from "@/libs/Projets";

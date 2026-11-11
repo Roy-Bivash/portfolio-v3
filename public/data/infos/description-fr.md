@@ -1,3 +1,3 @@
-En 2020, j'ai décidé de me lancer dans le code en créant de petits projets et en explorant le monde de la programmation. Ce qui n'était qu'une curiosité est rapidement devenu une passion. Après un BTS en informatique, où j'ai affûté mes compétences, j'ai poursuivi avec un diplôme d'Ingénieur en Systèmes d'Information, spécialité Management, au CNAM.
+Ingénieur diplômé du [CNAM](https://www.cnam.fr/), curieux des technologies et de leurs usages, je m'intéresse à la conception et au développement de solutions numériques alliant technicité, créativité et utilité.
 
-Aujourd'hui diplômé ingénieur, je continue de réaliser des projets variés techniques ou non pour apprendre, expérimenter et progresser. J'aime comprendre le fonctionnement des choses, structurer des idées en solutions concrètes et élargir continuellement mes compétences. Mon objectif à long terme est d'évoluer vers des responsabilités de leadership, où je pourrai guider des équipes vers la construction de solutions innovantes.
+Ce portfolio rassemble une sélection de mes réalisations, de mes expérimentations et de mes études de cas avec une attention particulière portée à l'accessibilité numérique.
