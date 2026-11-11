@@ -1,4 +1,4 @@
-import type { ProjectLink, ProjectType } from "@/types/ProjectType";
+import type { ProjectType } from "@/types/ProjectType";
 import { Tag } from "../tag/Tag";
 import { useLanguage } from "@/providers/languageProvider";
 import { Link } from "react-router";
@@ -10,7 +10,7 @@ interface ProjectProps {
 export function Project({ project }: ProjectProps) {
     const { t } = useLanguage();
 
-    const { id, title, subhead, tags, thumbnail } = project;
+    const { id, title, subhead, tags } = project;
 
     return (
         <Link
@@ -18,11 +18,6 @@ export function Project({ project }: ProjectProps) {
             className="group/project cursor-pointer transition duration-300 flex flex-col overflow-hidden border-b-2 border-transparent
                 bg-secondary-background lg:hover:bg-accent-background lg:hover:border-accent-text lg:hover:-translate-y-1 lg:hover:shadow-[0_8px_24px_-8px_rgba(194,65,12,0.20)]"
         >
-            <img
-                src={thumbnail}
-                alt={`${title} preview`}
-                className="w-full aspect-video object-cover object-top opacity-80 transition duration-300 group-hover/project:opacity-100 group-hover/project:scale-105"
-            />
             <div className="flex flex-col flex-1 p-4">
                 <h6 className="flex items-end gap-1 group-hover/project:text-accent-text font-semibold text-primary-text">
                     <span>{t(title)}</span>

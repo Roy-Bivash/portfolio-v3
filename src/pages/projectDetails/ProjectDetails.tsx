@@ -125,7 +125,7 @@ export function ProjectDetails() {
                                 className="prose max-w-none text-primary-text wrap-break-word
                                     [&_img]:max-w-full [&_img]:h-auto
                                     [&_pre]:max-w-full [&_pre]:overflow-x-auto
-                                     [&_table]:max-w-full [&_table]:overflow-x-auto
+                                    [&_table]:max-w-full [&_table]:overflow-x-auto
                                     [&_video]:max-w-full
                                     [&_iframe]:max-w-full"
                             >

@@ -8,7 +8,6 @@ export interface ProjectLink {
 
 export interface ProjectType {
     id: number;
-    thumbnail: string;
     title: LocalizedProject;
 
     subhead: LocalizedProject;
