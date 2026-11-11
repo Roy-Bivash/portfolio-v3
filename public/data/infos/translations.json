@@ -34,5 +34,13 @@
     "back_to_projects": {
         "fr": "Retour aux projets",
         "en": "Back to projects"
+    },
+    "no_rights_reserved_Free_to": {
+        "fr": "Aucun droit réservé. Libre de",
+        "en": "No rights reserved. Free to"
+    },
+    "use_and_modify": {
+        "fr": "utiliser et modifier.",
+        "en": "use and modify."
     }
 }
