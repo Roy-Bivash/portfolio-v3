@@ -1,11 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
 import { ArrowLeft } from "lucide-react";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import rehypeRaw from "rehype-raw";
-import rehypeSanitize, { defaultSchema } from "rehype-sanitize";
-import type { Options as SanitizeSchema } from "rehype-sanitize";
 
 import { LanguageButton } from "@/components/languageButton/LanguageButton";
 import { useLanguage } from "@/providers/languageProvider";
@@ -13,21 +8,9 @@ import type { LocalizedInfos } from "@/types/Infos";
 import { AppFooter } from "@/components/appFooter/AppFooter";
 import { getCaseStudyById, getCaseStudyDescriptions } from "@/libs/CaseStudys";
 import type { CaseStudyType } from "@/types/CaseStudyType";
+import { MarkdownContent } from "@/components/markdown/MarkdownContent";
 
-const sanitizeSchema: SanitizeSchema = {
-    ...defaultSchema,
-    tagNames: [...(defaultSchema.tagNames ?? []), "div"],
-    attributes: {
-        ...defaultSchema.attributes,
-        div: ["align"],
-        img: [
-            ...(defaultSchema.attributes?.img ?? []),
-            "height",
-            "width",
-            "align",
-        ],
-    },
-};
+
 
 type Status = "loading" | "ready" | "not-found" | "error";
 
@@ -109,28 +92,9 @@ export function CaseStudyDetails() {
 
                     {status === "ready" && caseStudy && (
                         <article>
-                            <div
-                                className="prose max-w-none text-primary-text wrap-break-word
-                                    [&_img]:max-w-full [&_img]:h-auto
-                                    [&_pre]:max-w-full [&_pre]:overflow-x-auto
-                                    [&_table]:max-w-full [&_table]:overflow-x-auto
-                                    [&_video]:max-w-full
-                                    [&_iframe]:max-w-full"
-                            >
-                                <ReactMarkdown
-                                    remarkPlugins={[remarkGfm]}
-                                    rehypePlugins={[rehypeRaw, [rehypeSanitize, sanitizeSchema]]}
-                                    components={{
-                                        table: ({ node, ...props }) => (
-                                            <div className="my-8 overflow-x-auto rounded-lg border border-secondary-text/20">
-                                                <table {...props} />
-                                            </div>
-                                        ),
-                                    }}
-                                >
-                                    {t(description)}
-                                </ReactMarkdown>
-                            </div>
+                            <MarkdownContent>
+                                {t(description)}
+                            </MarkdownContent>
                         </article>
                     )}
                 </main>

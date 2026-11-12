@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
 import { MaskIcon } from "@/components/maskIcon/MaskIcon";
 import { useLanguage } from "@/providers/languageProvider";
 import type { Infos, LocalizedInfos } from "@/types/Infos";
 import type { SocialMedia } from "@/types/SocialMedia";
 import { fetchJson, fetchText } from "@/libs/Fetch";
+import { MarkdownContent } from "@/components/markdown/MarkdownContent";
 
 
 async function getSocialMedia(): Promise<SocialMedia[]> {
@@ -91,21 +90,9 @@ export function HomePageHeader() {
             </div>
             <section id="about" className="md:col-span-3 lg:bg-secondary-background lg:p-4">
                 <div className="space-y-5 leading-relaxed tracking-wide text-primary-text">
-                    <ReactMarkdown
-                        remarkPlugins={[remarkGfm]}
-                        components={{
-                            a: ({ node, ...props }) => (
-                                <a
-                                    {...props}
-                                    className="transition hover:text-accent-text hover:underline"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                />
-                            ),
-                        }}
-                    >
+                    <MarkdownContent>
                         {t(description)}
-                    </ReactMarkdown>
+                    </MarkdownContent>
                 </div>
             </section>
         </header>
