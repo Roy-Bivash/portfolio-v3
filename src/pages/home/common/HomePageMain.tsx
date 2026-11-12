@@ -50,7 +50,7 @@ export function HomePageMain() {
     const hasMoreProject = extraProjects.length > 0;
 
     return (
-        <main className="my-18 space-y-12">
+        <main className="mt-28 mb-18 space-y-12">
             <section id="case-study">
                 <h5 className="text-secondary-text text-sm md:text-lg mb-1 uppercase tracking-wider leading-relaxed">{ tr("case_study") }</h5>
                 <h2 className="text-primary-text text-xl md:text-4xl mb-2 md:mb-6 tracking-wider leading-tight">{ tr("case_study_title_h2") }</h2>

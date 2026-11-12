@@ -38,8 +38,8 @@
             "en": "TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit."
         },
         "description-file": {
-            "fr": "etude-1/description-fr.md",
-            "en": "etude-1/description-en.md"
+            "fr": "etude-2/description-fr.md",
+            "en": "etude-2/description-en.md"
         },
         "tags": {
             "fr": ["Priorisation", "Backlog", "Conduite du changement"],

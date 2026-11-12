@@ -109,9 +109,6 @@ export function CaseStudyDetails() {
 
                     {status === "ready" && caseStudy && (
                         <article>
-                            <h1 className="text-primary-text text-3xl sm:text-4xl lg:text-5xl font-bold mb-2">
-                                {t(caseStudy.title)}
-                            </h1>
                             <div
                                 className="prose max-w-none text-primary-text wrap-break-word
                                     [&_img]:max-w-full [&_img]:h-auto

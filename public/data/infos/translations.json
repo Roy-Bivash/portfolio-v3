@@ -52,15 +52,15 @@
         "en": "use and modify."
     },
     "case_study": {
-        "fr": "Étude de cas",
+        "fr": "Études de cas",
         "en": "Case Study"
     },
     "case_study_title_h2": {
-        "fr": "Comprendre, concevoir, améliorer",
-        "en": "Understand, design, improve"
+        "fr": "Analyser, concevoir et mesurer l'impact",
+        "en": "Analyze, design and measure impact"
     },
     "project_title_h2": {
-        "fr": "Imaginer, expérimenter, développer",
-        "en": "Imagine, experiment, develop"
+        "fr": "Explorations techniques, open source et expérimentations",
+        "en": "Technical explorations, open source and experiments"
     }
 }
