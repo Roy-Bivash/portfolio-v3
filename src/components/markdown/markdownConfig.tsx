@@ -3,10 +3,16 @@ import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import rehypeSanitize, { defaultSchema } from "rehype-sanitize";
 import type { Options as SanitizeSchema } from "rehype-sanitize";
+import { Tag } from "../tag/Tag";
 
 const sanitizeSchema: SanitizeSchema = {
     ...defaultSchema,
-    tagNames: [...(defaultSchema.tagNames ?? []), "div"],
+    tagNames: [
+        ...(defaultSchema.tagNames ?? []), 
+        "div", 
+        "tags", 
+        "tag"
+    ],
     attributes: {
         ...defaultSchema.attributes,
         div: ["align"],
@@ -18,6 +24,7 @@ const sanitizeSchema: SanitizeSchema = {
         ],
         th: ["align"],
         td: ["align"],
+        tag: ["label"],
     },
 };
 
@@ -27,6 +34,15 @@ export const markdownRehypePlugins: Options["rehypePlugins"] = [
     rehypeRaw,
     [rehypeSanitize, sanitizeSchema],
 ];
+
+const customComponents = {
+    tags: (props: { children?: React.ReactNode }) => (
+        <ul className="not-prose my-4 flex flex-wrap gap-2">
+            {props.children}
+        </ul>
+    ),
+    tag: (props: { label?: string }) => <Tag name={props.label ?? ""} />,
+};
 
 export const markdownComponents: Options["components"] = {
     table: ({ node, ...props }) => (
@@ -48,4 +64,5 @@ export const markdownComponents: Options["components"] = {
             rel="noopener noreferrer"
         />
     ),
+    ...customComponents,
 };

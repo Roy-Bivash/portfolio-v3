@@ -1,10 +1,15 @@
 # Étude de cas : optimisation des performances PHP en environnement critique
+<tags>
+    <tag label="PHP"></tag>
+    <tag label="Diagnostic"></tag>
+    <tag label="Benchmarks"></tag>
+    <tag label="Plan d'action"></tag>
+    <tag label="Applications métiers internes"></tag>
+</tags>
 
-**Étude de cas d'ingénierie logicielle : portfolio**
-
+*Étude de cas d'ingénierie logicielle* \
 **Modernisation et optimisation des performances d'un parc applicatif PHP au sein d'une grande administration publique**
 
-**Diagnostic, benchmarks et plan d'action pour des applications métiers internes**
 
 ## Synthèse exécutive : ce qu'il faut retenir
 
