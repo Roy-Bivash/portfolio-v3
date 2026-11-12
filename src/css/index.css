@@ -11,14 +11,24 @@
     --color-secondary-background: rgba(161, 161, 161, 0.13);
 } */
 
-@theme {
-    --color-primary-text: #1C1917;         /* stone-900 */
-    --color-secondary-text: #78716C;       /* stone-500 */
+/* @theme {
+    --color-primary-text: #1C1917;
+    --color-secondary-text: #78716C;
     --color-background-text: rgba(120, 113, 108, 0.75);
-    --color-background: #FDFBF7;           /* blanc chaud */
-    --color-accent-text: #C2410C;          /* orange-700 */
+    --color-background: #FDFBF7;
+    --color-accent-text: #C2410C;
     --color-accent-background: rgba(194, 65, 12, 0.10);
     --color-secondary-background: rgba(28, 25, 23, 0.04);
+} */
+
+@theme {
+    --color-primary-text: #0B1F24;
+    --color-secondary-text: #587378;
+    --color-background-text: rgba(88, 115, 120, 0.75);
+    --color-background: #F5FAFA;
+    --color-accent-text: #0F766E;
+    --color-accent-background: rgba(15, 118, 110, 0.10);
+    --color-secondary-background: rgba(11, 31, 36, 0.04);
 }
 
 html {
@@ -37,6 +47,6 @@ body {
 
 /* Color of the text selection */
 *::selection {
-  color: black;
-  background-color: rgb(196, 222, 255);
+    color: black;
+    background-color: rgb(196, 222, 255);
 }
