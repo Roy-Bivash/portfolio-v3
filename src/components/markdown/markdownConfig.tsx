@@ -4,6 +4,8 @@ import rehypeRaw from "rehype-raw";
 import rehypeSanitize, { defaultSchema } from "rehype-sanitize";
 import type { Options as SanitizeSchema } from "rehype-sanitize";
 import { Tag } from "../tag/Tag";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
 
 const sanitizeSchema: SanitizeSchema = {
     ...defaultSchema,
@@ -28,11 +30,12 @@ const sanitizeSchema: SanitizeSchema = {
     },
 };
 
-export const markdownRemarkPlugins: Options["remarkPlugins"] = [remarkGfm];
+export const markdownRemarkPlugins: Options["remarkPlugins"] = [remarkGfm, remarkMath];
 
 export const markdownRehypePlugins: Options["rehypePlugins"] = [
     rehypeRaw,
     [rehypeSanitize, sanitizeSchema],
+    rehypeKatex
 ];
 
 const customComponents = {

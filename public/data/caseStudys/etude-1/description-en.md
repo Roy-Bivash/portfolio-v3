@@ -92,7 +92,7 @@ When an application must sort, filter or aggregate hundreds of thousands of line
 | :--- | :--- | :--- | :--- |
 | C | Native compiled (multithreading possible) | 0.76 MB | Reference (1×) |
 | Rust | Native compiled (multithreading possible) | 0.80 MB | $\sim 1.05\times$ |
-| PHP | Interpreted (single-threaded per request) | 14.60 MB | **18$\times$ more memory-hungry** |
+| PHP | Interpreted (single-threaded per request) | 14.60 MB | **18x more memory-hungry** |
 
 ## 4. Experiments and code benchmarks performed
 

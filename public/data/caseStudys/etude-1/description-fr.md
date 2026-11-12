@@ -93,7 +93,7 @@ Lorsqu'une application doit trier, filtrer ou agréger des centaines de milliers
 | :--- | :--- | :--- | :--- |
 | C | Compilé natif (multithread possible) | 0,76 Mo | Référence (1×) |
 | Rust | Compilé natif (multithread possible) | 0,80 Mo | $\sim 1,05\times$ |
-| PHP | Interprété (monothread par requête) | 14,60 Mo | **18$\times$ plus gourmand** |
+| PHP | Interprété (monothread par requête) | 14,60 Mo | **18x plus gourmand** |
 
 ## 4. Expérimentations et benchmarks de code réalisés
 
