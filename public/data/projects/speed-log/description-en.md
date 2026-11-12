@@ -1,4 +1,4 @@
-# SPEED LOG - Private Cycling and Running Tracker
+# Private Cycling and Running Tracker
 
 **Overview**  
 SPEED LOG is a cross-platform mobile app (iOS/Android) built with React Native and Expo, designed for people who want to track their cycling or running routes without signing up, creating an account, or transferring personal data. It was built for a personal need: start a session, monitor speed in real time, then review the history and details of each trip. All data stays locally on the phone using SQLite.

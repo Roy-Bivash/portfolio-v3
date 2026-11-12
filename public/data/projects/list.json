@@ -241,8 +241,8 @@
             "en": "Private Cycling and Running Tracker"
         },
         "description-file": {
-            "fr": "wot-track/description-fr.md",
-            "en": "wot-track/description-en.md"
+            "fr": "speed-log/description-fr.md",
+            "en": "speed-log/description-en.md"
         },
         "tags": ["React Native", "NativeWind", "SQLite", "GPS", "IOS", "Android"],
         "link": {
