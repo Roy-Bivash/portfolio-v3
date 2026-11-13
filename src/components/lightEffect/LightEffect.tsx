@@ -17,7 +17,7 @@ export function LightEffect() {
     return (
         <div
             ref={ref}
-            className="pointer-events-none fixed inset-0 z-50"
+            className="pointer-events-none fixed inset-0 z-50 hidden md:block"
             style={{ background: "radial-gradient(600px at var(--x, 50%) var(--y, 50%), rgba(15 118 110 / 0.08), transparent 85%)" }}        
         />
     );

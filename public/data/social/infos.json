@@ -1,17 +1,17 @@
 [
     {
         "name": "GitHub",
-        "href": "",
+        "href": "https://github.com/Roy-Bivash",
         "icon": "github.svg"
     },
     {
         "name": "LinkedIn",
-        "href": "",
+        "href": "https://www.linkedin.com/in/bivash-roy15",
         "icon": "linkedin.svg"
     },
     {
         "name": "Email",
-        "href": "mailto:",
+        "href": "mailto:bivash.roy.pro@outlook.com",
         "icon": "email.svg"
     }
 ]
