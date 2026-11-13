@@ -149,6 +149,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
         [availableLanguages, language, setLanguage, t, tList, tr]
     );
 
+    useEffect(() => {
+        if (!language) return;
+        document.documentElement.lang = language;
+    }, [language]);
+
     // Pas de render tant que les langues ne sont pas definie.
     if (!loaded) return null;
 
