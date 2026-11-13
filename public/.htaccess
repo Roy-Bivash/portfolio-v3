@@ -1,4 +1,19 @@
+Options -Indexes
+
+<FilesMatch "^\.(?!htaccess)">
+    Require all denied
+</FilesMatch>
+
 RewriteEngine On
+
+RewriteRule ^(data-old|data-new|data-tmp|data-trash|var)(/|$) - [F,L]
+
+<IfModule mod_headers.c>
+    <If "%{REQUEST_URI} =~ m#^/data/#">
+        Header set Cache-Control "no-cache"
+    </If>
+</IfModule>
+
 RewriteCond %{REQUEST_URI} !^/data/
 RewriteCond %{REQUEST_URI} !\.php$
 RewriteCond %{REQUEST_FILENAME} !-f

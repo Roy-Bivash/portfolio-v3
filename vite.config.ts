@@ -19,7 +19,6 @@ export default defineConfig({
   server: {
     proxy: {
       "/admin.php": "http://localhost:8000",
-      "/script.php": "http://localhost:8000",
     }
   }
 })
