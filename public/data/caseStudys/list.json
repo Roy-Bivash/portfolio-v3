@@ -2,49 +2,47 @@
     {
         "id": 1,
         "title": {
-            "fr": "Performances PHP à la DGFIP",
-            "en": "TODO"
+            "fr": "Optimisation des performances PHP en environnement critique",
+            "en": "PHP performance optimization in a critical environment"
         },
         "subhead": {
-            "fr": "Étude de cas 01 · DGFIP · 2024 – 2025",
-            "en": "TODO"
+            "fr": "Étude de cas 01 · Fonction Publique · 2024 - 2025",
+            "en": "Case Study 01 · Public Sector · 2024 - 2025"
         },
         "introduction": {
-            "fr": "TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elitTODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-            "en": "TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit."
+            "fr": "Diagnostic de goulots d'étranglement, benchmarks et stratégie de refonte d'un parc applicatif PHPlegacy soumis à de fortes volumétries de données.",
+            "en": "Bottleneck diagnosis, benchmarks, and redesign strategy for a legacy PHP application estate handling heavy data volumes."
         },
         "description-file": {
             "fr": "etude-1/description-fr.md",
             "en": "etude-1/description-en.md"
         },
         "tags": {
-            "fr": ["Priorisation", "Backlog", "Conduite du changement"],
-            "en": ["test"]
+            "fr": ["PHP", "Diagnostic", "Benchmarks", "Plan d'action", "Applications métiers internes"],
+            "en": ["PHP", "Diagnosis", "Benchmarks", "Action plan", "Internal business applications"]
         }
-        
     },
     {
         "id": 2,
         "title": {
-            "fr": "TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-            "en": "TODO"
+            "fr": "Industrialiser l'accessibilité numérique (RGAA) en milieu Agile",
+            "en": "Industrializing Digital Accessibility (RGAA) in an Agile Environment"
         },
         "subhead": {
-            "fr": "Étude de cas 02 · DGFIP · 2025 – 2026",
-            "en": "TODO"
+            "fr": "Étude de cas 02 · Fonction Publique · 2025 - 2026",
+            "en": "Case Study 02 · Public Sector · 2025 - 2026"
         },
         "introduction": {
-            "fr": "TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elitTODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-            "en": "TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit.TODO Lorem ipsum dolor sit amet consectetur adipisicing elit."
+            "fr": "Comment résorber la dette technique et intégrer durablement les normes RGAA dans un cycle Agile existant grâce à une approche Shift-Left et à l'automatisation des tests.",
+            "en": "How to resolve technical debt and sustainably embed RGAA accessibility standards into an existing Agile workflow through a Shift-Left approach and test automation."    
         },
         "description-file": {
             "fr": "etude-2/description-fr.md",
             "en": "etude-2/description-en.md"
         },
         "tags": {
-            "fr": ["Priorisation", "Backlog", "Conduite du changement"],
-            "en": ["test"]
+            "fr": ["Accessibilité Numérique", "RGAA v4.1", "Inclusion Numérique", "Méthodologie Agile", "Shift-Left", "Conduite du Changement", "Tests Automatisés", "CI/CD"],
+            "en": ["Digital Accessibility", "RGAA v4.1", "Digital Inclusion", "Agile Methodology", "Shift-Left Approach", "Change Management", "Automated Testing", "CI/CD"]
         }
-        
     }
 ]
