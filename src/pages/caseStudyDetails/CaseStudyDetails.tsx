@@ -73,7 +73,7 @@ export function CaseStudyDetails() {
                     <Link to="/" target="_self" className="mb-8 transition group font-normal tracking-wide text-accent-text flex items-center gap-1">
                         <ArrowLeft size={18} className="transition h-4 w-4 group-hover:-translate-x-2" />
 
-                        <span>{tr("back_to_projects")}</span>
+                        <span>{tr("back")}</span>
                     </Link>
 
                     {status === "loading" && (

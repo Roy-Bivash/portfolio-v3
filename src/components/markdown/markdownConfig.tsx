@@ -10,10 +10,12 @@ import rehypeKatex from "rehype-katex";
 const sanitizeSchema: SanitizeSchema = {
     ...defaultSchema,
     tagNames: [
-        ...(defaultSchema.tagNames ?? []), 
-        "div", 
-        "tags", 
-        "tag"
+        ...(defaultSchema.tagNames ?? []),
+        "div",
+        "tags",
+        "tag",
+        "cards",
+        "card"
     ],
     attributes: {
         ...defaultSchema.attributes,
@@ -27,6 +29,7 @@ const sanitizeSchema: SanitizeSchema = {
         th: ["align"],
         td: ["align"],
         tag: ["label"],
+        card: ["title"],
     },
 };
 
@@ -45,6 +48,29 @@ const customComponents = {
         </ul>
     ),
     tag: (props: { label?: string }) => <Tag name={props.label ?? ""} />,
+    cards: (props: { children?: React.ReactNode }) => (
+        <div className="not-prose my-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
+            {props.children}
+        </div>
+    ),
+    card: (props: { title?: string; children?: React.ReactNode }) => (
+        <div className="not-prose flex flex-col overflow-hidden bg-secondary-background">
+            <div className="flex flex-col flex-1 gap-2 p-4 md:p-6">
+                {props.title && (
+                    <h3 className="text-lg font-semibold text-primary-text">
+                        {props.title}
+                    </h3>
+                )}
+                <div
+                    className="prose prose-sm max-w-none
+                           [--tw-prose-body:var(--color-secondary-text)]
+                           [&>*:first-child]:mt-0 [&>*:last-child]:mb-0"
+                >
+                    {props.children}
+                </div>
+            </div>
+        </div>
+    ),
 };
 
 export const markdownComponents: Options["components"] = {
@@ -67,5 +93,6 @@ export const markdownComponents: Options["components"] = {
             rel="noopener noreferrer"
         />
     ),
+
     ...customComponents,
 };

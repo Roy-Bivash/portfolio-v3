@@ -1,5 +1,6 @@
 import ReactMarkdown from "react-markdown";
 import { markdownComponents, markdownRehypePlugins, markdownRemarkPlugins } from "./markdownConfig";
+import "katex/dist/katex.min.css";
 
 type MarkdownContentProps = {
     children: string;
