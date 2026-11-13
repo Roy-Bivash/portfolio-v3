@@ -1,4 +1,4 @@
-import { useLanguage } from "@/providers/languageProvider";
+import { useLanguage } from "@/providers/LanguageProvider";
 
 export function AppFooter() {
     const currentYear = new Date().getFullYear();

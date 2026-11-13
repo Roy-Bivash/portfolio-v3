@@ -2,7 +2,7 @@ import { Project, ProjectList } from "@/components/project";
 import { useEffect, useState } from "react";
 import type { ProjectType } from "@/types/ProjectType";
 import { getProjects } from "@/libs/Projets";
-import { useLanguage } from "@/providers/languageProvider";
+import { useLanguage } from "@/providers/LanguageProvider";
 import { CaseStudyList } from "@/components/caseStudy";
 import { CaseStudy } from "@/components/caseStudy/CaseStudy";
 import { getCaseStudys } from "@/libs/CaseStudys";

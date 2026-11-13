@@ -1,4 +1,4 @@
-import { useLanguage } from "@/providers/languageProvider";
+import { useLanguage } from "@/providers/LanguageProvider";
 
 export function LanguageButton() {
     const { availableLanguages, language, setLanguage } = useLanguage();

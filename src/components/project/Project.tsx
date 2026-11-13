@@ -1,6 +1,6 @@
 import type { ProjectType } from "@/types/ProjectType";
 import { Tag } from "../tag/Tag";
-import { useLanguage } from "@/providers/languageProvider";
+import { useLanguage } from "@/providers/LanguageProvider";
 import { Link } from "react-router";
 
 interface ProjectProps {

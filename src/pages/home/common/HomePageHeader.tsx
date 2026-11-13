@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { MaskIcon } from "@/components/maskIcon/MaskIcon";
-import { useLanguage } from "@/providers/languageProvider";
+import { useLanguage } from "@/providers/LanguageProvider";
 import type { Infos, LocalizedInfos } from "@/types/Infos";
 import type { SocialMedia } from "@/types/SocialMedia";
 import { fetchJson, fetchText } from "@/libs/Fetch";

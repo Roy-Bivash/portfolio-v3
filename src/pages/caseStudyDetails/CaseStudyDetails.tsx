@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router";
 import { ArrowLeft } from "lucide-react";
 
 import { LanguageButton } from "@/components/languageButton/LanguageButton";
-import { useLanguage } from "@/providers/languageProvider";
+import { useLanguage } from "@/providers/LanguageProvider";
 import type { LocalizedInfos } from "@/types/Infos";
 import { AppFooter } from "@/components/appFooter/AppFooter";
 import { getCaseStudyById, getCaseStudyDescriptions } from "@/libs/CaseStudys";

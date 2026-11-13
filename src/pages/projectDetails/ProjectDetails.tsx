@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { LanguageButton } from "@/components/languageButton/LanguageButton";
-import { useLanguage } from "@/providers/languageProvider";
+import { useLanguage } from "@/providers/LanguageProvider";
 import { getProjectById, getProjectDescriptions } from "@/libs/Projets";
 import type { ProjectType } from "@/types/ProjectType";
 import type { LocalizedInfos } from "@/types/Infos";
