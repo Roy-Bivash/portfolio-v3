@@ -170,15 +170,37 @@ function run_git(array $args): int
 {
     global $VAR;
     $log  = $VAR . '/git.log';
-    $cmd  = array_merge(['timeout', '120', 'git'], $args);
+    $cmd  = array_merge(['git'], $args);
     $proc = proc_open(
         $cmd,
         [1 => ['file', $log, 'a'], 2 => ['file', $log, 'a']],
         $pipes,
         BASE,
-        ['GIT_TERMINAL_PROMPT' => '0', 'HOME' => $VAR, 'PATH' => '/usr/local/bin:/usr/bin:/bin']
+        [
+            'GIT_TERMINAL_PROMPT' => '0',
+            'HOME'                => $VAR,
+            'PATH'                => '/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin',
+        ]
     );
-    return is_resource($proc) ? proc_close($proc) : -1;
+    if (!is_resource($proc)) {
+        return -1;
+    }
+    // Délai maximum de 120 s, géré en PHP (pas de dépendance à la commande "timeout")
+    $deadline = time() + 120;
+    while (true) {
+        $st = proc_get_status($proc);
+        if (!$st['running']) {
+            $code = $st['exitcode'];
+            proc_close($proc);
+            return $code;
+        }
+        if (time() > $deadline) {
+            proc_terminate($proc, 9);
+            proc_close($proc);
+            return -1;
+        }
+        usleep(200000);
+    }
 }
 
 function with_lock(callable $fn): void
@@ -196,7 +218,7 @@ function with_lock(callable $fn): void
     }
 }
 
-function do_update(string $repo, string $branch): void
+function do_update(string $repo, string $branch, string $subdir = ''): void
 {
     global $DATA, $OLD;
     if (!preg_match('#^(https://|ssh://|git@)[^\s]+$#', $repo)) {
@@ -219,6 +241,28 @@ function do_update(string $repo, string $branch): void
         throw new RuntimeException('Le clonage du dépôt a échoué (voir var/git.log).');
     }
     rm_rf($new . '/.git');
+
+    // Si REPO_SUBDIR est défini, seul ce sous-dossier du dépôt devient le contenu de data
+    $subdir = trim($subdir, '/');
+    if ($subdir !== '') {
+        if (!preg_match('#^[A-Za-z0-9._-]+(/[A-Za-z0-9._-]+)*$#', $subdir) || str_contains($subdir, '..')) {
+            rm_rf($new);
+            throw new RuntimeException('REPO_SUBDIR invalide dans le .env.');
+        }
+        $src = $new . '/' . $subdir;
+        if (!is_dir($src) || is_link($src)) {
+            rm_rf($new);
+            throw new RuntimeException('Le dossier "' . $subdir . '" est introuvable dans le dépôt.');
+        }
+        $stage = BASE . '/data-stage';
+        rm_rf($stage);
+        if (!rename($src, $stage)) {
+            rm_rf($new);
+            throw new RuntimeException('Impossible d\'extraire le sous-dossier du dépôt.');
+        }
+        rm_rf($new);
+        rename($stage, $new);
+    }
 
     // Sauvegarde de l'ancien contenu puis mise en place du nouveau
     if (is_dir($DATA)) {
@@ -317,7 +361,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             mkdir($VAR, 0750, true);
         }
         if ($action === 'update') {
-            with_lock(fn() => do_update($env['REPO_URL'] ?? '', $env['REPO_BRANCH'] ?? ''));
+            with_lock(fn() => do_update($env['REPO_URL'] ?? '', $env['REPO_BRANCH'] ?? '', $env['REPO_SUBDIR'] ?? ''));
             flash('ok', 'Mise à jour effectuée. L\'ancien contenu est sauvegardé dans data-old.');
         } elseif ($action === 'recover') {
             with_lock(fn() => do_recover());

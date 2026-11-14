@@ -1,0 +1,30 @@
+Options -Indexes
+
+# --- Fichiers cachés (.env, .git, ...) ---
+<FilesMatch "^\.(?!htaccess)">
+    Require all denied
+</FilesMatch>
+
+RewriteEngine On
+
+# --- Dossiers internes de l'admin : jamais accessibles depuis le web ---
+RewriteRule ^(data-old|data-new|data-tmp|data-trash|data-stage|var)(/|$) - [F,L]
+
+# --- (Optionnel) HTTPS obligatoire : décommenter en production ---
+# RewriteCond %{HTTPS} off
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+# Header always set Strict-Transport-Security "max-age=31536000"
+
+# --- Les fichiers de /data ne doivent pas rester en cache après une mise à jour ---
+<IfModule mod_headers.c>
+    <If "%{REQUEST_URI} =~ m#^/data/#">
+        Header set Cache-Control "no-cache"
+    </If>
+</IfModule>
+
+# --- Fallback de l'application React (SPA) : règle d'origine, inchangée ---
+RewriteCond %{REQUEST_URI} !^/data/
+RewriteCond %{REQUEST_URI} !\.php$
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L]
