@@ -1,22 +1,22 @@
 import { fetchJson, fetchText } from "@/libs/Fetch";
 import type { ProjectType } from "@/types/ProjectType";
 import type { LocalizedInfos } from "@/types/Infos";
+import { cached } from "./Cache";
 
-export async function getProjects(): Promise<ProjectType[]> {
-    const data = await fetchJson<ProjectType[]>("/data/projects/list.json");
-
-    return data;
+export function getProjects(): Promise<ProjectType[]> {
+    return cached("projects:list", () =>
+        fetchJson<ProjectType[]>("/data/projects/list.json")
+    );
 }
 
-export async function getProjectById(id: string): Promise<ProjectType | undefined> {
-    const projects = await getProjects();
-    return projects.find((p) => String(p.id) === id);
-}
-
-export async function getProjectDescriptions(descriptionFiles: Record<string, string>, langs: string[]): Promise<LocalizedInfos> {
+export async function getProjectDescriptions(
+    descriptionFiles: Record<string, string>,
+    langs: string[]
+): Promise<LocalizedInfos> {
     const entries = await Promise.all(
         langs.map(async (lang) => {
-            const markdown = await fetchText(`/data/projects/${descriptionFiles[lang]}`);
+            const url = `/data/projects/${descriptionFiles[lang]}`;
+            const markdown = await cached(url, () => fetchText(url));
             return [lang, markdown] as const;
         })
     );

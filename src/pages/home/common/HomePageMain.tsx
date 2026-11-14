@@ -1,49 +1,18 @@
 import { Project, ProjectList } from "@/components/project";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import type { ProjectType } from "@/types/ProjectType";
-import { getProjects } from "@/libs/Projets";
 import { useLanguage } from "@/providers/LanguageProvider";
 import { CaseStudyList } from "@/components/caseStudy";
 import { CaseStudy } from "@/components/caseStudy/CaseStudy";
-import { getCaseStudys } from "@/libs/CaseStudys";
 import type { CaseStudyType } from "@/types/CaseStudyType";
+import { useSiteData } from "@/providers/DataProvider";
 
 
 export function HomePageMain() {
     const INITIAL_VISIBLE = 6;
     const [showAll, setShowAll] = useState(false);
-    const [projectList, setProjectList] = useState<ProjectType[]>([]);
-    const [caseStudyList, setCaseStudyList] = useState<CaseStudyType[]>([]);
     const { tr } = useLanguage();
-
-
-    useEffect(() => {
-        let cancelled = false;
-
-        async function run() {
-            try {
-                const prjs = await getProjects();
-                const caseStudys = await getCaseStudys();
-
-                if (cancelled) return;
-                
-                prjs.reverse();
-                caseStudys.reverse();
-
-                setProjectList(prjs);
-                setCaseStudyList(caseStudys);
-            } catch (error) {
-                console.error(error);
-            }
-        }
-
-        run();
-
-        return () => {
-            cancelled = true;
-        };
-    }, []);
-
+    const { projects: projectList, caseStudies: caseStudyList } = useSiteData();
 
     const firstProjects = projectList.slice(0, INITIAL_VISIBLE);
     const extraProjects = projectList.slice(INITIAL_VISIBLE);
@@ -52,8 +21,8 @@ export function HomePageMain() {
     return (
         <main className="mt-28 mb-18 space-y-12">
             <section id="case-study">
-                <h5 className="text-secondary-text text-sm md:text-lg mb-1 uppercase tracking-wider leading-relaxed">{ tr("case_study") }</h5>
-                <h2 className="text-primary-text text-xl md:text-4xl mb-2 md:mb-6 tracking-wider leading-tight">{ tr("case_study_title_h2") }</h2>
+                <h5 className="text-secondary-text text-sm md:text-lg mb-1 uppercase tracking-wider leading-relaxed">{tr("case_study")}</h5>
+                <h2 className="text-primary-text text-xl md:text-4xl mb-2 md:mb-6 tracking-wider leading-tight">{tr("case_study_title_h2")}</h2>
                 <CaseStudyList>
                     {caseStudyList.map((el: CaseStudyType) => (
                         <CaseStudy
@@ -65,8 +34,8 @@ export function HomePageMain() {
             </section>
 
             <section id="projects">
-                <h5 className="text-secondary-text text-sm md:text-lg mb-1 uppercase tracking-wider leading-relaxed">{ tr("projects") }</h5>            
-                <h2 className="text-primary-text text-xl md:text-4xl mb-2 md:mb-6 tracking-wider leading-tight">{ tr("project_title_h2") }</h2>
+                <h5 className="text-secondary-text text-sm md:text-lg mb-1 uppercase tracking-wider leading-relaxed">{tr("projects")}</h5>
+                <h2 className="text-primary-text text-xl md:text-4xl mb-2 md:mb-6 tracking-wider leading-tight">{tr("project_title_h2")}</h2>
                 <ProjectList>
                     {firstProjects.map((el: ProjectType) => (
                         <Project

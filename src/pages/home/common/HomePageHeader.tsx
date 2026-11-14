@@ -1,66 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { MaskIcon } from "@/components/maskIcon/MaskIcon";
 import { useLanguage } from "@/providers/LanguageProvider";
-import type { Infos, LocalizedInfos } from "@/types/Infos";
 import type { SocialMedia } from "@/types/SocialMedia";
-import { fetchJson, fetchText } from "@/libs/Fetch";
 import { MarkdownContent } from "@/components/markdown/MarkdownContent";
-
-
-async function getSocialMedia(): Promise<SocialMedia[]> {
-    const data = await fetchJson<SocialMedia[]>("/data/social/infos.json");
-
-    return data.map((el) => ({
-        ...el,
-        icon: `/data/social/${el.icon}`,
-    }));
-}
-
-async function getDescriptions(infos: Infos, availableLanguages: string[]): Promise<LocalizedInfos> {
-    const entries = await Promise.all(
-        availableLanguages.map(async (lang) => {
-            const markdown = await fetchText(`/data/infos/${infos.description[lang]}`);
-            return [lang, markdown] as const;
-        })
-    );
-
-    return Object.fromEntries(entries);
-}
+import { useSiteData } from "@/providers/DataProvider";
 
 export function HomePageHeader() {
-    const { t, availableLanguages } = useLanguage();
+    const { t } = useLanguage();
+    useState<SocialMedia[]>([]);
 
-    const [infos, setInfos] = useState<Infos>();
-    const [description, setDescription] = useState<LocalizedInfos>({});
-    const [socialMedia, setSocialMedia] = useState<SocialMedia[]>([]);
-
-    useEffect(() => {
-        let cancelled = false;
-
-        async function run() {
-            try {
-                const [infosData, socialData] = await Promise.all([
-                    fetchJson<Infos>("/data/infos/infos.json"),
-                    getSocialMedia(),
-                ]);
-                const descriptionsData = await getDescriptions(infosData, availableLanguages);
-
-                if (cancelled) return;
-
-                setInfos(infosData);
-                setDescription(descriptionsData);
-                setSocialMedia(socialData);
-            } catch (error) {
-                console.error(error);
-            }
-        }
-
-        run();
-
-        return () => {
-            cancelled = true;
-        };
-    }, []);
+    const { infos, description, socialMedia } = useSiteData();
 
     return (
         <header className="grid grid-cols-1 gap-8 md:grid-cols-5 md:items-center">

@@ -1,6 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { fetchJson } from "@/libs/Fetch";
 import { useAppState } from "@/providers/AppStateProvider";
+import { LoadingScreen } from "@/components/loadingScreen/LoadingScreen";
 
 export type LanguageCode = string;
 export type Localized<T = string> = Record<LanguageCode, T>;
@@ -155,7 +156,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     }, [language]);
 
     // Pas de render tant que les langues ne sont pas definie.
-    if (!loaded) return null;
+    if (!loaded) return <LoadingScreen />;
 
     return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
 }

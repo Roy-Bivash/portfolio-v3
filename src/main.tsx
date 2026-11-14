@@ -7,13 +7,16 @@ import { Router } from './router/Router';
 import { LanguageProvider } from './providers/LanguageProvider';
 import { AppStateProvider } from './providers/AppStateProvider';
 import { LightEffect } from './components/lightEffect/LightEffect';
+import { DataProvider } from './providers/DataProvider';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <AppStateProvider>
       <LanguageProvider>
-        <LightEffect />
-        <Router />
+        <DataProvider>
+          <LightEffect />
+          <Router />
+        </DataProvider>
       </LanguageProvider>
     </AppStateProvider>
   </StrictMode>,
