@@ -8,6 +8,7 @@ import { getCaseStudyDescriptions } from "@/libs/CaseStudys";
 import type { LocalizedInfos } from "@/types/Infos";
 import { AppFooter } from "@/components/appFooter/AppFooter";
 import { MarkdownContent } from "@/components/markdown/MarkdownContent";
+import { LoaderComponent } from "@/components/loadingScreen/LoaderComponent";
 
 type Status = "loading" | "ready" | "error";
 
@@ -55,7 +56,7 @@ export function CaseStudyDetails() {
                     {!caseStudy && <p className="text-secondary-text">{tr("study_not_found")}</p>}
 
                     {caseStudy && status === "loading" && (
-                        <p className="text-secondary-text">{tr("loading")}...</p>
+                        <LoaderComponent />
                     )}
 
                     {caseStudy && status === "error" && (

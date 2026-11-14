@@ -8,6 +8,7 @@ import { getProjectDescriptions } from "@/libs/Projets";
 import type { LocalizedInfos } from "@/types/Infos";
 import { AppFooter } from "@/components/appFooter/AppFooter";
 import { MarkdownContent } from "@/components/markdown/MarkdownContent";
+import { LoaderComponent } from "@/components/loadingScreen/LoaderComponent";
 
 type Status = "loading" | "ready" | "error";
 
@@ -55,7 +56,7 @@ export function ProjectDetails() {
                     {!project && <p className="text-secondary-text">{tr("project_not_found")}</p>}
 
                     {project && status === "loading" && (
-                        <p className="text-secondary-text">{tr("loading")}...</p>
+                        <LoaderComponent />
                     )}
 
                     {project && status === "error" && (
